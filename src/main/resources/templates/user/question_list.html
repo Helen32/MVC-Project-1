@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:th="http://www.thymeleaf.org">
+
+<head>
+ <title>Add Question</title>
+ <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+ <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.min.css">
+</head>
+<body>
+<div class="container">
+<h2>Question</h2>
+
+<table class="table table-striped">
+<tr>
+<th>#ID</th>
+<th>Title</th>
+<th>Description</th>
+
+</tr>
+<tbody>
+
+<tr th:each="msg: ${questionlist}">
+<td th:text ="${msg.id}"></td>
+<td th:text ="${msg.description}" ></td>
+<td th:text ="${msg.title}"></td>
+
+</tr>
+
+</tbody>
+</table>
+<a class="btn btn-primary" th:href="@{/question/addQuestion/}" th:value="addURL" role="button" href="${addURL}">Add Question</a>
+
+
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

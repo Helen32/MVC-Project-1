@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:th="http://www.thymeleaf.org">
+
+<head>
+ <title>Employee Form</title>
+ <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+ <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.min.css">
+</head>
+<body>
+<div class="container">
+<form method="POST" th:action="@{/employee/saveEmployee/}"  th:object="${employeeForm}" th:field="*{id}">
+
+<input type="hidden" name="saveURL" th:value="${saveURL}" />
+<h2> Add New Employee</h2>
+
+
+<div class= "form-group">
+
+          <input class="form-control" placeholder="firstname" th:field="*{firstname}" id="firstname" type="text" th:value="${employeeForm.firstname}" >
+          <label for="firstname" ></label>
+  </div>
+  
+<div class= "form-group">        
+        <input class="form-control" placeholder="lastname" th:field="*{lastname}" id="lastname" type="text" th:value="${employeeForm.lastname}">
+          <label for="lastname"></label>
+          
+       
+     </div> 
+     <div class= "form-group">        
+        <input class="form-control" placeholder="sex" th:field="*{sex}" id="sex" type="text" th:value="${employeeForm.sex}">
+          <label for="sex"></label>
+          
+       
+     </div> 
+     <div class= "form-group">        
+        <input class="form-control" placeholder="jobtitle" th:field="*{jobtitle}" id="jobtitle" type="text" th:value="${employeeForm.jobtitle}">
+          <label for="jobtitle"></label>
+          
+       
+     </div> 
+
+        <button type="submit" name="save" class="btn btn-primary">Add Employee</button>
+
+
+
+</form>
+</div>
+</body>
+</html>

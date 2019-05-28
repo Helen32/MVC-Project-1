@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:th="http://www.thymeleaf.org">
+
+<head>
+ <title>Question Form</title>
+ <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+ <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.min.css">
+</head>
+<body>
+<div class="container">
+<form method="POST" th:action="@{/question/saveQuestion/}"  th:object="${questionForm}" th:field="*{id}">
+
+<input type="hidden" name="saveURL" th:value="${saveURL}" />
+<h2> Question</h2>
+
+
+<div class= "form-group">
+
+          <input class="form-control" placeholder="Title" th:field="*{title}" id="title" type="text" th:value="${questionForm.title}" >
+          <label for="title" ></label>
+  </div>
+  
+<div class= "form-group">        
+        <input class="form-control" placeholder="Description" th:field="*{description}" id="description" type="text" th:value="${questionForm.description}">
+          <label for="description"></label>
+          
+       
+     </div> 
+
+        <button type="submit" name="save" class="btn btn-primary">Save</button>
+
+
+
+</form>
+</div>
+</body>
+</html>
